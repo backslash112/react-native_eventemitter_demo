@@ -10,6 +10,7 @@ var styles = StyleSheet.create({
 		backgroundColor: '#E0EEE0'
 	}
 });
+
 class New extends Component {
 	render() {
 		return <View style={styles.container}></View>
