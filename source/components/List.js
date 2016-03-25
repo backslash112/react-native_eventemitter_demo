@@ -1,3 +1,4 @@
+var Store = require('../stores/Store.js');
 
 import React, {
 	Component,
@@ -19,14 +20,24 @@ var styles = StyleSheet.create({
 	}
 });
 
-class List extends Component {
+var text = 'hi~';
 
+class List extends Component {
 	render() {
 		return (
 			<View style={styles.container}>
-			<Text style={styles.text}>List</Text>
+			<Text style={styles.text}>{text}</Text>
 			</View>
 			);
+	}
+
+	componentDidMount() {
+		Store.addChangeListener('ButtonPressEvent', this._handleSaveButtonPressEvent.bind(this));
+	}
+
+	_handleSaveButtonPressEvent() {
+		console.log('5. got it!');
+		text = 'Got it!'
 	}
 }
 

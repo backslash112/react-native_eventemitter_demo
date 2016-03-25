@@ -14,6 +14,7 @@
 
 var List = require('./source/components/List.js');
 var New = require('./source/components/New.js');
+var Actions = require('./source/actions/Actions.js');
 
 var styles = StyleSheet.create({
   container: {
@@ -52,6 +53,8 @@ class ReactNativeEventEmitterDemo extends Component {
   }
 
   _onRightButtonPress() {
+    Actions.fire('ButtonPressEvent')
+    console.log('1. fire');
     this.refs.nav.pop();
   }
 }
